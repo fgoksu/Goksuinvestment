@@ -83,17 +83,8 @@ function Stat({ label, value, color, sub, icon }) {
 
 function Modal({ title, onClose, children, wide }) {
   return (
-    <div style={{ position: "fixed", inset: 0, background: "#000b", zIndex: 999, display: "flex", alignItems: "flex-start", justifyContent: "center", padding: "40px 16px", overflowY: "auto" }} onClick={onClose}>
-      <div onClick={e => e.stopPropagation()} className="fadeIn" style={{ background: T.card, border: `1px solid ${T.borderHi}`, borderRadius: 16, padding: 28, width: wide ? 720 : 560, maxWidth: "100%", flexShrink: 0 }}>
-        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 20 }}>
-          <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, fontWeight: 600 }}>{title}</div>
-          <button onClick={onClose} style={{ background: "none", border: "none", color: T.muted, fontSize: 22, cursor: "pointer" }}>×</button>
-        </div>
-        {children}
-      </div>
-    </div>
-  );
-}
+    <div style={{ position: "fixed", inset: 0, background: "#000b", zIndex: 999, overflowY: "auto", padding: "40px 16px" }} onClick={onClose}>
+      <div onClick={e => e.stopPropagation()} className="fadeIn" style={{ background: T.card, border: `1px solid ${T.borderHi}`, borderRadius: 16, padding: 28, width: wide ? 720 : 560, maxWidth: "100%", margin: "0 auto" }}>
 
 function Field({ label, children, span }) {
   return (
